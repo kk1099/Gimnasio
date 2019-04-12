@@ -2,9 +2,9 @@ package com.utn.controlador;
 
 public class Aspirantes{
 	
-	public Aspirantes nombre;
-	public Categorias[] categorias;
-	public static int peso=0;
+	private Aspirantes nombre;
+	private Categorias[] categorias;
+	private static int peso=0;
 	
 	public Aspirantes getNombre() {
 		return nombre;

@@ -1,24 +1,22 @@
 package com.utn.vista;
 
 import java.util.Scanner;
-
 import com.utn.controlador.Aspirantes;
 import com.utn.controlador.Categorias;
+import com.utn.modelo.Entrenadores;
+import com.utn.modelo.NombreEntrenadores;
 
 public class Vista {
+	public int[] numeroAspirantes;
 	
 		private static Scanner scan;
-		public static int peso;
-		public static String nombre;
-		private static Categorias categoria;
-		private static Aspirantes[] aspirantes;	
-		
-		public static int getPeso() {
-			return peso;
+		private static String nombre;
+		public int[] getNumeroAspirantes() {
+			return numeroAspirantes;
 		}
 
-		public static void setPeso(int peso) {
-			Vista.peso = peso;
+		public void setNumeroAspirantes(int[] numeroAspirantes) {
+			this.numeroAspirantes = numeroAspirantes;
 		}
 
 		public static String getNombre() {
@@ -29,29 +27,31 @@ public class Vista {
 			Vista.nombre = nombre;
 		}
 
-		public static Categorias getCategoria() {
-			return categoria;
+		public static int getPeso() {
+			return peso;
 		}
 
-		public static void setCategoria(Categorias categoria) {
-			Vista.categoria = categoria;
+		public static void setPeso(int peso) {
+			Vista.peso = peso;
 		}
 
-		public static Aspirantes[] getAspirantes() {
-			return aspirantes;
+		public static int getCategoria() {
+			return Categorias;
 		}
 
-		public static void setAspirantes(Aspirantes[] aspirantes) {
-			Vista.aspirantes = aspirantes;
+		public static void setCategoria(int categoria) {
+			Vista.Categorias = categoria;
 		}
 
+		private static int peso;
+		private static String Categorias;
 			
 			public static void main(String[] args){		
 				scan = new Scanner(System.in);
 								
 					for(int i=0; i < 2; i++) {
 					
-						
+					setNombre(getNombre());	
 					System.out.println("-------------------------------------------");
 					System.out.println("                 *Gimnasio*                ");
 					System.out.println("-------------------------------------------");
@@ -59,6 +59,7 @@ public class Vista {
 					System.out.println(" Ingrese su nombre : ");
 					System.out.println("                                           ");			
 					scan.next();
+					setPeso(getPeso());
 					System.out.println("-------------------------------------------");
 					System.out.println("                 *Gimnasio*                ");
 					System.out.println("-------------------------------------------");
@@ -67,7 +68,7 @@ public class Vista {
 					System.out.println("                                           ");
 					scan.nextInt();
 					
-					}
+					
 					
 					if (peso > 48.988 && peso < 50.802){
 						  setCategoria(Categorias.MOSCA);
@@ -86,6 +87,7 @@ public class Vista {
 						} else if (peso > 91 && peso < 99999) {
 							setCategoria(Categorias.PESADO);
 						}
-					
-}
+					}
+				
+			}
 }
